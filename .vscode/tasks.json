@@ -1,0 +1,293 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "1-g++.exe build active file",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "2-g++.exe build active file",
+            "command": "g++",
+            "args": [
+                "'-Wall'",
+                "'-std=c++17'",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Build",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "BuildMultipleFile",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\random.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "Build With Static Library step1",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-I",
+                "${fileDirname}\\StanfordCPPLib",
+                "-c",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.o"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Build With Static Library step2",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileBasenameNoExtension}.o",
+                "${fileDirname}\\StanfordCPPLib\\libStanfordCPPLib.a"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassArrayList",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\ArrayList.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassListNode",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\ListNode.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassLinkedList",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\LinkedList.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassPriorityQueue",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\PriorityQueue.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassTreeNode",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\TreeNode.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassBinaryTree",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\BinaryTree.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassHeapBinaryTree",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\HeapBinaryTree.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassHuffmanTree",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\HuffmanTree.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassGraph",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\Graph.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithClassWeightedGraph",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\WeightedGraph.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
