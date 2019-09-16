@@ -288,6 +288,42 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithStringMap",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\StringMap.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithStringMap2",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\StringMap2.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
