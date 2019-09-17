@@ -8,7 +8,7 @@ using namespace std;
 
 HashSet::HashSet(int capacity, int mySize)
 {
-    this->capacity = capacity;
+    this->capacity = capacity; //重名，所以加this指针(显式使用this指针)?之前在LinkedList里都没加的。
     this->mySize = mySize;
     buckets.resize(capacity, nullptr);
 }
