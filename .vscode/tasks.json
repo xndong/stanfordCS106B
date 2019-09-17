@@ -324,6 +324,42 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithHashSet",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\HashSet.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "BuildWithHashMap",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\HashMap.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
