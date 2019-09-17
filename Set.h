@@ -21,8 +21,9 @@
  *       By the way, hash table is an super upgrade version than lookup table in chapter 15.2.
  * 
  * 书本的讲课思路是引人入胜地将算法复杂度逐步降低：
- * StringMap ---> Map ---> HashMap
- *                Set ---> HashSet
+ * StringMap ---> SortedMap ---> Map ---> HashMap
+ *                SortedSet ---> Set ---> HashSet
+ * SortedMap or SortedSet 一直维持顺序(插入排序),通过这种方式，可以将get的复杂度降低到O(logN),但是put的复杂度依旧是O(N).
  * Of course, we can design 'StringSet', but given that StringMap is merely used to let us to know why should design Map(BST internally)
  * and why should design HashMap. Both reason is that we want to push the limit of the complexity of our algorithm in add, contains, remove to O(1).
  * It turns out we finally achieve our ojective by design these new data structures step by step.
