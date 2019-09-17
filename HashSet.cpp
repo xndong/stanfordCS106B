@@ -1,3 +1,5 @@
+#include <iostream>
+#include <iomanip>
 #include <vector>
 #include <string>
 #include <cmath>
@@ -6,9 +8,9 @@ using namespace std;
 
 HashSet::HashSet(int capacity, int mySize)
 {
-    capacity = capacity;
-    mySize = mySize;
-    buckets.resize(capacity);
+    this->capacity = capacity;
+    this->mySize = mySize;
+    buckets.resize(capacity, nullptr);
 }
 HashSet::~HashSet()
 {
@@ -41,28 +43,45 @@ bool HashSet::contains(int value) const
 }
 void HashSet::printStructure() const
 {
+    for (int i = 0; i < capacity; i++)
+    {
+        cout << "[" << setw(2) << i << "]";
+        HashNode *curr = buckets[i];
+        while (curr != nullptr)
+        {
+            cout << " -> " << setw(2) << curr->data;
+            curr = curr->next;
+        }
+        cout << " /" << endl;
+    }
+    cout << "size = " << mySize << endl;
 }
 void HashSet::remove(int value)
 {
     if (!contains(value))
         return;
     int bucket = hashCode(value);
-    //remove the first element
+    //remove the first element in chain
     if (buckets[bucket]->data == value)
     {
         buckets[bucket] = buckets[bucket]->next;
+        mySize--;
     }
-    //remove non-first element
+    //remove non-first element in chain
     else
     {
         HashNode *current = buckets[bucket];
-        while (current != nullptr)
+        while (current->next != nullptr)
         {
-            if (current->data == value)
+            if (current->next->data == value)
+            {
                 current->next = current->next->next;
+                mySize--;
+                return;
+            }
             current = current->next;
         }
-        }
+    }
 }
 int HashSet::hashCode(int value) const // a naive version hashCode() ---> a hash function.
 {
